@@ -1,9 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-
-@RouteConfig([
-	{ path: '/home', name: "Home", component: 'HomeComponent' }
-])
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: 'navbar',

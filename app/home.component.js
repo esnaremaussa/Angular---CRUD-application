@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,28 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
-    var NavbarComponent;
+    var core_1;
+    var HomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
-            NavbarComponent = (function () {
-                function NavbarComponent() {
+            HomeComponent = (function () {
+                function HomeComponent() {
                 }
-                NavbarComponent = __decorate([
+                HomeComponent = __decorate([
                     core_1.Component({
-                        selector: 'navbar',
-                        templateUrl: 'app/navbar.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        selector: 'home',
+                        template: '<h1>Home</h1>'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], NavbarComponent);
-                return NavbarComponent;
+                ], HomeComponent);
+                return HomeComponent;
             }());
-            exports_1("NavbarComponent", NavbarComponent);
+            exports_1("HomeComponent", HomeComponent);
         }
     }
 });
-//# sourceMappingURL=navbar.component.js.map
+//# sourceMappingURL=home.component.js.map
