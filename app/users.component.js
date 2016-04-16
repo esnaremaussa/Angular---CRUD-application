@@ -31,7 +31,6 @@ System.register(['angular2/core', './users.service', 'angular2/http', 'angular2/
                 function UsersComponent(_usersService) {
                     this._usersService = _usersService;
                     this.isLoading = true;
-                    this.users = [];
                 }
                 UsersComponent.prototype.ngOnInit = function () {
                     var _this = this;

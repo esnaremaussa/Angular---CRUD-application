@@ -12,7 +12,7 @@ import {RouterLink} from 'angular2/router';
 })
 export class UsersComponent implements OnInit{ 
 	isLoading = true;
-	users = [];
+	users: any[];
 
 	constructor(private _usersService: UsersService){}
 

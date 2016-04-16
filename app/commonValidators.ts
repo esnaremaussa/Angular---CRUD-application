@@ -12,7 +12,7 @@ export class CommonValidators{
 		}
 	}
 	static cannotConstainSpace(control: Control) {
-		if (control.value.indexOf(" ") >= 0) {
+		if (control.value && control.value.indexOf(" ") >= 0) {
 			return {
 				cannotContainSpace: true
 			}

@@ -19,7 +19,7 @@ System.register([], function(exports_1, context_1) {
                     }
                 };
                 CommonValidators.cannotConstainSpace = function (control) {
-                    if (control.value.indexOf(" ") >= 0) {
+                    if (control.value && control.value.indexOf(" ") >= 0) {
                         return {
                             cannotContainSpace: true
                         };
