@@ -1,3 +1,4 @@
+
 export class Address {
     street: string;
     suite: string;
@@ -6,6 +7,7 @@ export class Address {
 }
 
 export class User {
+    id: number;
     name: string;
     phone: string;
     email: string;

@@ -18,4 +18,16 @@ export class UsersService {
 	addUser(user) {
 		return this._http.post(this._url, JSON.stringify(user)).map(res => res.json());
 	}
+	updateUser(user) {
+		return this._http.put(this.getUserUrl(user.id), JSON.stringify(user))
+			.map(res => res.json());
+	}
+	deleteUser(id){
+		return this._http.delete(this.getUserUrl(id))
+			.map(res => res.json());
+	}
+	
+	private getUserUrl(userId) {
+		return this._url + "/" + userId;
+	}
 }

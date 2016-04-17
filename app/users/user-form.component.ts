@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {FormBuilder, ControlGroup, Validators} from 'angular2/common';
 import {CanDeactivate, Router, RouteParams} from 'angular2/router';
 
-import {CommonValidators} from './commonValidators'
+import {CommonValidators} from '../shared/commonValidators'
 import {UsersService} from './users.service';
 import {User} from './user';
 
@@ -24,8 +24,7 @@ export class UserFormComponent implements OnInit, CanDeactivate {
 	) {
 		this.form = fb.group({
 			name: ['', Validators.compose([
-				Validators.required,
-				CommonValidators.cannotConstainSpace
+				Validators.required
 			])],
 			email: ['', Validators.compose([
 				Validators.required, 
@@ -67,13 +66,18 @@ export class UserFormComponent implements OnInit, CanDeactivate {
     }
 
 	save() {
-		this._userService.addUser(this.form.value)
-					.subscribe(users => {
-						// Ideally, here we'd want:
-                		// this.form.markAsPristine();
-						this._router.navigate(['Users']);
-					});
+		var result;
+		if (this.user.id) {
+			result = this._userService.updateUser(this.user);
+		}
+		else {
+			result = this._userService.addUser(this.user);
+		}
 
+		result.subscribe(x => {
+            // Ideally, here we'd want:
+            // this.form.markAsPristine();
+            this._router.navigate(['Users']);
+        });
 	}
-
 }
